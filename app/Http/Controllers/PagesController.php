@@ -15,6 +15,7 @@ class PagesController extends Controller {
         $last  = 'N.';
         $fullname = $first . " " . $last;
         $email = "pavelN@gmail.com";
+        $data = [];
         $data['email'] = $email;
         $data['fullname'] = $fullname;
         return view("pages.about")->withData($data);
