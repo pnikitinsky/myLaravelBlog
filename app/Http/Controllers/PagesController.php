@@ -7,7 +7,7 @@ use Illuminate\Routing\Controller;
 
 class PagesController extends Controller {
     public function getIndex() {
-        return view("pages.welcome");
+        return view("pages.main");
     }
 
     public function getAbout() {
@@ -15,6 +15,7 @@ class PagesController extends Controller {
         $last  = 'N.';
         $fullname = $first . " " . $last;
         $email = "pavelN@gmail.com";
+        $data = [];
         $data['email'] = $email;
         $data['fullname'] = $fullname;
         return view("pages.about")->withData($data);
