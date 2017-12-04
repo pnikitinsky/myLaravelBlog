@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Pavel's Laravel blog - About</title>
+    <title>Pavel's Laravel blog</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('public/css/app.css') }}">
     <script type="text/javascript" src="{{ URL::asset('public/js/app.js') }}"></script>
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -35,9 +36,9 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="/">Home</a></li>
+            <li class="active"><a href="/">Home <span class="sr-only">(current)</span></a></li>
             <li><a href="/about">About</a></li>
-            <li class="active"><a href="/contact">Contact<span class="sr-only">(current)</span></a></li>
+            <li><a href="/contact">Contact</a></li>
           </ul>
             <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
@@ -54,73 +55,51 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
-      <!-- end-navigation -->  
+    <!-- end-navigation -->  
     
     <!-- main-content -->
     <div class="container">
-      <!-- Introduction Row -->
         <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">About Us
-                    <small>It's Nice to Meet You!</small>
-                </h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, explicabo dolores ipsam aliquam inventore corrupti eveniet quisquam quod totam laudantium repudiandae obcaecati ea consectetur debitis velit facere nisi expedita vel?</p>
+          <div class="jumbotron">
+            <div class="container">
+                <h1>Hello, Welcome to my Blog</h1>
+                <p class="lead">Thankyou for being a part of my test blog</p>
+                <p><a class="btn btn-primary btn-lg" href="#" role="button">Popular Post</a></p>
             </div>
-        </div>
-
-        <!-- Team Members Row -->
+          </div>     
+        </div><!-- end row -->
         <div class="row">
-            <div class="col-lg-12">
-                <h2 class="page-header">Our Team</h2>
+            <div class="col-md-8">
+                <div class="post">
+                    <h3>Post Title</h3>
+                    <p>In psychology, an attitude is a psychological construct, it is a mental and emotional entity that inheres in, or characterizes a person. They are complex and an acquired state through experiences. It is an individual's predisposed state of mind regarding a value and it is precipitated through a responsive expression toward a person, place, thing, or event (the attitude object) which in turn influences the individual's thought and action...</p>
+                    <a href="#" class="btn btn-primary">Read more</a>
+                </div>
+                
+                <hr/>
+                
+                <div class="post">
+                    <h3>Post Title</h3>
+                    <p>In psychology, an attitude is a psychological construct, it is a mental and emotional entity that inheres in, or characterizes a person. They are complex and an acquired state through experiences. It is an individual's predisposed state of mind regarding a value and it is precipitated through a responsive expression toward a person, place, thing, or event (the attitude object) which in turn influences the individual's thought and action...</p>
+                    <a href="#" class="btn btn-primary">Read more</a>
+                </div>
+                
+                <hr/>
+                
+                <div class="post">
+                    <h3>Post Title</h3>
+                    <p>In psychology, an attitude is a psychological construct, it is a mental and emotional entity that inheres in, or characterizes a person. They are complex and an acquired state through experiences. It is an individual's predisposed state of mind regarding a value and it is precipitated through a responsive expression toward a person, place, thing, or event (the attitude object) which in turn influences the individual's thought and action...</p>
+                    <a href="#" class="btn btn-primary">Read more</a>
+                </div>
             </div>
-            <div class="col-lg-4 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
-                <h3>John Smith
-                    <small>Job Title</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
-                <h3>John Smith
-                    <small>Job Title</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
-                <h3>John Smith
-                    <small>Job Title</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
-                <h3>John Smith
-                    <small>Job Title</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
-                <h3>John Smith
-                    <small>Job Title</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
-                <h3>John Smith
-                    <small>Job Title</small>
-                </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+            <div class="col-md-3 col-md-offset-1">
+                <h2>Sidebar</h2>
             </div>
         </div>
     </div>
-    <hr>
+    <hr/><br/>
     <!-- end-main-content -->
-    
-    <!-- footer -->
+    <!--footer -->
     <footer>
       <div class="footer" id="footer">
           <div class="container">
@@ -146,7 +125,7 @@
               <p class="pull-left"> Copyright ©Laravel 2017. All right reserved. </p>
           </div>
       </div>
-    <!--/.footer-bottom--> 
+      <!--/.footer-bottom--> 
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

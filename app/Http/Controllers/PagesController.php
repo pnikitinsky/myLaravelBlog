@@ -7,7 +7,7 @@ use Illuminate\Routing\Controller;
 
 class PagesController extends Controller {
     public function getIndex() {
-        return view("pages.welcome");
+        return view("pages.main");
     }
 
     public function getAbout() {
