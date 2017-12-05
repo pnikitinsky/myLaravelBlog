@@ -11,6 +11,7 @@
         </div>
         <hr/><br/>
         <!-- end-main-content -->
+        
         <!--footer -->
         @include('partials._footer')
         @include('partials._javascript')
