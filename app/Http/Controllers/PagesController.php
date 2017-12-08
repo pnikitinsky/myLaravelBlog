@@ -28,7 +28,7 @@ class PagesController extends Controller {
      * @return mixed
      */
     public function getIndex() {
-        return view("pages.index")->withData($this->data);
+        return view("pages.main")->withData($this->data);
     }
 
     /**
