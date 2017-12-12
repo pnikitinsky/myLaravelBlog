@@ -7,6 +7,11 @@
         @include('partials._nav')
         <!-- main-content -->
         <div class="container">
+            @if(Session::has('message'))
+                <div class="alert  alert-success">
+                    {{ Session::get('message') }}
+                </div>
+            @endif
             @yield('content')
         </div>
         <hr/><br/>

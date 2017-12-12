@@ -33,9 +33,9 @@
                             <td>
                                 <a href="{{ route('posts.show', $post->id) }}" class="btn btn-default">View</a>
                                 <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-default">Edit</a>
-                                {!! Html::linkRoute('posts.destroy', 'Delete', array($post->id), array(
+                                {{ Html::linkRoute('posts.destroy', 'Delete', array($post->id), array(
                                 'class' => 'btn btn-danger', 'method' => 'delete'))
-                                !!}
+                                }}
                             </td>
                         </tr>
                     @endforeach

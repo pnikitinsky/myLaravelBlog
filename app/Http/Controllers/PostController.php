@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class PostController extends Controller
 {
@@ -38,15 +39,9 @@ class PostController extends Controller
     public function store(Request $request)
     {
         // validate data
-        $this->validate($request, array(
-            'title' => 'required|max:255',
-            'body' => 'required'
-        ));
+        $this->postsValidation($request);
         // store in the database
-        $post = new Post;
-        $post->title = $request->title;
-        $post->body = $request->body;
-        $post->save();
+        $post = Post::create($request->all());
         // redirect
         return redirect()->route('posts.show', $post->id);
     }
@@ -64,6 +59,17 @@ class PostController extends Controller
     }
 
     /**
+     * @param Request $request
+     * Validates data from forms before storing in database
+     */
+    private function postsValidation(Request $request) {
+        $this->validate($request, array(
+            'title' => 'required|max:255',
+            'body' => 'required'
+        ));
+    }
+
+    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -71,7 +77,8 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::find($id);
+        return view('posts.edit')->withPost($post);
     }
 
     /**
@@ -83,7 +90,13 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->postsValidation($request);
+        $post = Post::find($id);
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+        $post->save();
+        $request->session()->flash('message', 'Success: This post was successfully saved.');
+        return redirect()->route('posts.show', $post->id);
     }
 
     /**

@@ -27,15 +27,15 @@ class PagesController extends Controller {
      * Returns the main view
      * @return mixed
      */
-    public function getIndex() {
-        return view("pages.main")->withData($this->data);
+    public function index() {
+        return view("pages.welcome")->withData($this->data);
     }
 
     /**
      * Returns the about view
      * @return mixed
      */
-    public function getAbout() {
+    public function about() {
         return view("pages.about")->withData($this->data);
     }
 
@@ -43,7 +43,7 @@ class PagesController extends Controller {
      * Returns the contact view
      * @return mixed
      */
-    public function getContact() {
+    public function contact() {
         return view("pages.contact")->withData($this->data);
     }
 
