@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Post;
 use Illuminate\Routing\Controller;
 
 /**
@@ -28,7 +29,8 @@ class PagesController extends Controller {
      * @return mixed
      */
     public function index() {
-        return view("pages.welcome")->withData($this->data);
+        $posts = Post::orderBy('created_at','desc')->limit(4)->get();
+        return view("pages.welcome")->with('posts', $posts)->withData($this->data);
     }
 
     /**

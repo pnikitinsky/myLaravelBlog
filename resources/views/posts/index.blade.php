@@ -33,14 +33,20 @@
                             <td>
                                 <a href="{{ route('posts.show', $post->id) }}" class="btn btn-default">View</a>
                                 <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-default">Edit</a>
-                                {{ Html::linkRoute('posts.destroy', 'Delete', array($post->id), array(
-                                'class' => 'btn btn-danger', 'method' => 'delete'))
-                                }}
+                                <div id="trTochangeHeight">
+                                    {{ Form::open(['route' => ['posts.destroy', $post->id], 'method' => 'DELETE']) }}
+                                         {{ Form::submit('Delete', ['class' => 'btn btn-default']) }}
+                                     {{ Form::close() }}
+                                </div>
+
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
+            <div class="text-center">
+                {{ $posts->links() }}
+            </div>
         </div>
     </div>
 @stop
