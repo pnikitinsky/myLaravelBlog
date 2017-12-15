@@ -1,29 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Pavel's Laravel blog</title>
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+@extends('main')
+@section('title', '| Homepage')
 
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <h1>Hello, Laravel!</h1>
+@section('content')
+    <div class="row">
+      <div class="jumbotron">
+        <div class="container">
+            <h1>Hello, Welcome to {{ $data['first'] }}'s Blog</h1>
+            <p class="lead">Thankyou for being a part of my test blog</p>
+            <p><a class="btn btn-primary btn-lg" href="#" role="button">Popular Post</a></p>
+        </div>
+      </div>
+    </div><!-- end row -->
+    <div class="row">
+        <div class="col-md-8">
+            @foreach($posts as $post)
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  </body>
-</html>
+                <div class="post">
+                    <h3>{{ $post->title }}</h3>
+                    <p>{{ substr($post->body, 0, 300) }}{{ strlen($post->body) > 300 ? "..." : "" }}</p>
+{{--                    <a href="{{ route('pages.single', $post->id)  }}" class="btn btn-primary">Read more</a>--}}
+                </div>
+
+                <hr/>
+            @endforeach
+        </div>
+        <div class="col-md-3 col-md-offset-1">
+            <h2>Sidebar</h2>
+        </div>
+    </div> <!-- end of .row -->
+@endsection
